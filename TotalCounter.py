@@ -9,7 +9,7 @@ myToken_carvir = ''
 myToken_msp02 = ''
 myToken_bigben = ''
 root = Tk()
-root.title('SentinelOne Counter')
+root.title('Total Counter')
 root.geometry("1380x720")
 
 description = StringVar()
