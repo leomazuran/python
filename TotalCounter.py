@@ -1,3 +1,6 @@
+## Author: Leonardo Mazuran
+
+
 import requests
 import json
 import re
