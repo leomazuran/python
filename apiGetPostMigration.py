@@ -1,4 +1,4 @@
-#Author: Leonardo Mazuran (lmazuran63@gmail.com)
+#Author: Leonardo Mazuran (leonardo.mazuran@gmail.com)
 import requests
 import json
 import csv
