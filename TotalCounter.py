@@ -11,6 +11,7 @@ myToken_nafcs = ''
 myToken_carvir = ''
 myToken_msp02 = ''
 myToken_bigben = ''
+#**** GUI configuratiuon *******
 root = Tk()
 root.title('Total Counter')
 root.geometry("1380x720")
@@ -23,20 +24,27 @@ l = Label(root, text="Total Number of Agents:",fg="black", font="none 64 bold")
 l.place(x= 690, y = 50, anchor='center')
 n = Label(root, textvariable=number,fg="black", font="none 300 bold")
 n.place(x= 690, y = 350, anchor='center')
-
+# API Calls ####
 def run (master):
         try:
+                
                 auth = True
+                #API URL
                 myUrl_msp = 'https://myurl.net//web/api/v1.6/agents/count'
+                # API Header Information
                 head = {'Authorization': 'APIToken {}'.format(myToken_MSP)}
+                # get resonse
                 response_msp = requests.get(myUrl_msp, headers=head)
+                # check response (if 401 is true, return false)
                 check1 = str(response_msp)
                 a = int(0)
                 if check1 == "<Response [401]>":
                         auth = False
                 else:     
+                        # regex to find numbers and put it in a intergar format. 
                         carvir_msp = re.findall(b'(\\d+)', response_msp.content)
                         a = int(carvir_msp[0])
+                # same processes as above.
                 myUrl_nafcs = 'https://myurl1.net//web/api/v1.6/agents/count'
                 head = {'Authorization': 'APIToken {}'.format(myToken_nafcs)}
                 response_nafcs = requests.get(myUrl_nafcs, headers=head)
@@ -78,16 +86,19 @@ def run (master):
                         carvir_bigben = re.findall(b'(\\d+)', response_bigben.content)
                         e = int(carvir_bigben[0])
               
-                   
+                 # add integers from several sites up.
                 n1=a+b+c+d+e
                 print (n1)
+                # if number reach 500k, give eror of ID10T.
                 if n1 > 500000:
                         number.set('ID10T')
+               # if one of the site shows to have permissions, display error on gui
                 elif auth==False:
                       number.set("E401")
                       description.set('One or More API Tokens Are Revoked/Expired. Please contact Leo.')
                       root.after(10000, run, master)
                 else:
+                        #display total number of agents.
                         number.set(n1)
                         description.set('No Calculators Needed!')
                 root.after(40000, run, master)
