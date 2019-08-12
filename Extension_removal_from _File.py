@@ -20,7 +20,6 @@ def get_drives():
 
     return drives
 
-if __name__ == '__main__':
     print ('Current Drives Installed:')
     print (get_drives())
     logger.info("Drive Letters find in Device"+str(get_drives()))
