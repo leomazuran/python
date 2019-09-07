@@ -1,6 +1,6 @@
+#Author: Leonardo Mazuran
+
 import os
-#import io
-#import codecs
 extension_list = []
 import string
 drive_chooses = []
