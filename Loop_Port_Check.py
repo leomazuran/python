@@ -8,7 +8,7 @@ while True:
     # if no connection issues, port is good and dump to txt file for logging.
     if result == 0:
         currentDT = datetime.datetime.now()
-        f = open("C:\\Users\\leonardo.mazuran\\Desktop\\PortUPLog.txt", "a")
+        f = open("C:\\Users\\user\\Desktop\\PortUPLog.txt", "a")
         f.write ("\nPort OPEN\n")
         f.write (str(currentDT))
         print (currentDT)
@@ -18,7 +18,7 @@ while True:
     else:
     # if can not connect. port is closed and send to txt file for logging. 
         currentDT = datetime.datetime.now()
-        f = open("C:\\Users\\leonardo.mazuran\\Desktop\\PortUPLog.txt", "a")
+        f = open("C:\\Users\\user\\Desktop\\PortUPLog.txt", "a")
         f.write ("\nPort CLOSED\n")
         f.write (str(currentDT))
         f.close()
