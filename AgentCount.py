@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 import time
 
 console_list = ['console1.cox.com', 'console2.corp.cox.com', 'console3.corp.cox.com']
-console_keys = ['console1 api key','console2 key','console2 key']
+console_keys = ['','','']
 # Time delta (days) for Workstations
 workstation_active_days=10
 # Time delta (days) for servers
