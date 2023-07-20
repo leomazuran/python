@@ -6,7 +6,7 @@ import certifi
 from datetime import datetime, timedelta
 import time
 
-console_list = ['console1.cox.com', 'console2.corp.cox.com', 'console3.corp.cox.com']
+console_list = ['console1.beepboop.weewoo', 'console2.beepboop.weewoo', 'console3.beepboop.weewoo']
 console_keys = ['','','']
 # Time delta (days) for Workstations
 workstation_active_days=10
